@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<h2>To-Do List</h2>
+
+<a href="/ListApp/Create">Add New Task</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Deadline</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ListAppId</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.DeadLine</td>
+            <td>@item.Priority</td>
+            <td>@(item.IsFinished ? "Done" : "Not Done")</td>
+            <td>@item.Category?.CategoryName</td>
+            <td>
+                <a href="/ListApp/Edit/@item.ListAppId">Edit</a> |
+                <a href="/ListApp/Delete/@item.ListAppId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,33 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+            @model List<ListApplication.Models.Category>
+
+            <h2>Categories</h2>
+
+                <a href="/Category/Create">Add New Category</a>
+
+                 <table border="1" cellpadding="10">
+                     <tr>
+                         <th>ID</th>
+                        <th>Category Name</th>
+                         <th>Actions</th>
+                     </tr>
+
+            @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.CategoryId</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                    <a href="/Category/Edit/@item.CategoryId">Edit</a> |
+                    <a href="/Category/Delete/@item.CategoryId">Delete</a>
+                    </td>
+                </tr>
+                }
+                </table>
