@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model Bookorma.Models.Book
+
+<h2>Edit Book</h2>
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <label>Name:</label><br />
+    <input type="text" name="Name" value="@Model.Name" /><br />
+
+    <label>Author:</label><br />
+    <input type="text" name="Author" value="@Model.Author" /><br /><br />
+
+    <button type="submit">Update</button>
+</form>
